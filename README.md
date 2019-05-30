@@ -2,5 +2,4 @@
 
 Proyecto Integración Continua - Politécnico Grancolombiano.
 
-Actualizacion y Modificación del software Boca
-
+Actualizacion y Modificación del
