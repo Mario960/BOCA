@@ -1,0 +1,94 @@
+/* new ui for boca - jlmanjarres@poli.edu.co */
+body {
+  margin: 15% 15% 15% 15%;
+  height:100px;
+  background: #000 url(bg/coding-on-laptop_925x.jpg) center;
+  background-repeat: no-repeat;
+    background-size: auto;
+  /*
+  https://burst.shopify.com/photos/coding-on-laptop free photo
+  Photo by <a href="https://burst.shopify.com/@matthew_henry?utm_campaign=photo_credit&amp;utm_content=Free+Coding+On+Laptop+Image%3A+Browse+1000s+of+Pics&amp;utm_medium=referral&amp;utm_source=credit">Matthew Henry</a> from <a href="https://burst.shopify.com/business?utm_campaign=photo_credit&amp;utm_content=Free+Coding+On+Laptop+Image%3A+Browse+1000s+of+Pics&amp;utm_medium=referral&amp;utm_source=credit">Burst</a>
+  background: #000 url(bg/coding-on-laptop_4460x4460.jpg);
+
+  */
+}
+font {
+  color: #000;
+  background: #ffffff;
+}
+
+input[type="submit"] {
+    color:#050;
+    margin-left:40%;
+    margin-right:40%;
+    font: bold 84% 'trebuchet ms',helvetica,sans-serif;
+    background-color:#fed;
+    border:1px solid;
+    border-color: #FFDD55 #FFDD55 #FFDD55 #FFDD55;
+}
+/*
+generico
+*/
+table {
+  width: 100%;
+  border-collapse: collapse;
+  opacity: 0.9;
+}
+/* Cebra */
+tr:nth-of-type(odd) {
+  background: #eee;
+}
+th {
+  background: #333;
+  color: white;
+  font-weight: bold;
+}
+td, th {
+  padding: 6px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+/*
+max-width
+*/
+@media
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* hacerlo block */
+	table, thead, tbody, th, td, tr {
+		display: block;
+	}
+
+	/* Esconder encabezados */
+	thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	tr { border: 1px solid #ccc; }
+
+	td {
+		/* td ahora es una fila */
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		padding-left: 1%;
+		/*padding-left: 50%;*/
+	}
+
+	td:before {
+		/* ahora pasa a ser encabezado */
+		position: absolute;
+		/* Top/left */
+		top: 6px;
+		left: 6px;
+		width: 1%;
+		/*width: 45%;*/
+		padding-right: 10px;
+		white-space: nowrap;
+	}
+
+
+}
