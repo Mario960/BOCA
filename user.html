@@ -1,0 +1,260 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Admin's Page</title>
+
+<link rel="stylesheet" href="./ui/php/Css.css" type="text/css">
+</head><body id="body"><table border="1" width="100%">
+<tbody><tr><td nowrap="" bgcolor="eeee00" align="center"><img src="./ui/img/smallballoontransp.png" alt=""><font color="#000000">BOCA</font></td><td bgcolor="#eeee00" width="99%">
+Username: Administrator (site=1)<br>
+</td><td bgcolor="#eeee00" align="center" nowrap="">&nbsp;contest not running&nbsp;</td></tr>
+</tbody></table>
+<table border="0" width="100%" align="center">
+ <tbody><tr>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./run.html">Runs</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./score.html">Score</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./clar.html">Clarifications</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./user.html">Users</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./problem.html">Problems</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./language.html">Languages</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./answer.html">Answers</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./misc.html">Misc</a></td>
+ </tr><tr>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./task.html">Tasks</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./site.html">Site</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./contest.html">Contest</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./log.html">Logs</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./report.html">Reports</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./files.html">Backups</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./option.html">Options</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./index.html">Logout</a></td>
+ </tr>
+</tbody></table>
+
+  <script language="javascript">
+    function conf2(url) {
+      if (confirm("Are you sure?")) {
+        document.location=url;
+      } else {
+        document.location='user.html';
+      }
+    }
+  </script>
+<br>
+<table width="100%" border="1">
+ <tbody><tr>
+  <td nowrap=""><b>User #</b></td>
+  <td><b>Site</b></td>
+  <td><b>Username</b></td>
+  <td><b>ICPC ID</b></td>
+  <td><b>Type</b></td>
+  <td><b>IP</b></td>
+  <td><b>LastLogin</b></td>
+  <td><b>LastLogout</b></td>
+  <td><b>Enabled</b></td>
+  <td><b>Multi</b></td>
+  <td><b>Fullname</b></td>
+  <td><b>Description</b></td>
+ </tr>
+ <tr>
+  <td nowrap="">1000</td>
+  <td nowrap="">1</td>
+  <td nowrap="">admin&nbsp;</td>
+  <td nowrap="">&nbsp;</td>
+  <td nowrap="">admin&nbsp;</td>
+  <td nowrap="">172.69.206.104&nbsp;</td>
+  <td nowrap="">17:20:28 UTC - 16/abril/2019</td>
+  <td nowrap=""><a href="javascript: conf2(&#39;user.html?logout=1&amp;site=1&amp;user=1000&#39;)">Force Logout</a></td>
+  <td nowrap="">Yes</td>
+  <td nowrap="">Yes</td>
+  <td nowrap="">Administrator&nbsp;</td>
+  <td nowrap="">&nbsp;</td>
+</tr> <tr>
+  <td nowrap=""><a href="./user.html?site=1&amp;user=2001">2001</a></td>
+  <td nowrap="">1</td>
+  <td nowrap="">dniquefa&nbsp;</td>
+  <td nowrap="">&nbsp;</td>
+  <td nowrap="">team&nbsp;</td>
+  <td nowrap="">172.69.206.86&nbsp;</td>
+  <td nowrap="">01:56:54 UTC - 16/Abril/2019</td>
+  <td nowrap="">01:57:22 UTC - 16/Abril/2019</td>
+  <td nowrap="">Yes</td>
+  <td nowrap="">Yes</td>
+  <td nowrap="">Niquefa Rafael&nbsp;</td>
+  <td nowrap="">Tutor&nbsp;</td>
+</tr></tbody></table>
+
+<br><br><center><b>Clicking on a user number will bring the user data for edition.<br>
+To import the users, just fill in the import file field.<br>
+The file must be in the format defined in the admin's manual.</b></center>
+
+<form name="form1" enctype="multipart/form-data" method="post" action="./user.html">
+  <input type="hidden" name="confirmation" value="noconfirm">
+  <center>
+    <table border="0">
+      <tbody><tr>
+        <td width="25%" align="right">Import file:</td>
+        <td width="75%">
+          <input type="file" name="importfile" size="40">
+        </td>
+      </tr>
+    </tbody></table>
+  </center>
+  <script language="javascript">
+    function conf() {
+      if (confirm("Confirm?")) {
+        document.form1.confirmation.value='confirm';
+      }
+    }
+  </script>
+  <center>
+      <input type="submit" name="Submit" value="Import" onclick="conf()">
+      <input type="reset" name="Submit2" value="Clear">
+  </center>
+</form>
+
+  <br><br>
+  <center>
+<b>To create/edit one user, enter the data below.<br>
+Note that any changes will overwrite the already defined data.<br>
+(Specially care if you use a user number that is already existent.)<br>
+<br>
+</b>
+    <center>
+    </center><table border="0">
+<form name="form3" action="./user.html" method="post"></form>
+  <input type="hidden" name="confirmation" value="noconfirm">
+  <script language="javascript">
+    function conf3() {
+      computeHASH();
+      if (confirm("Confirm?")) {
+        document.form3.confirmation.value='confirm';
+      }
+    }
+    function conf5() {
+      document.form3.confirmation.value='noconfirm';
+    }
+  </script>
+   </table><table border="0">
+      <tbody><tr>
+        <td width="35%" align="right">User Site Number:</td>
+        <td width="65%">
+	  <input type="text" name="usersitenumber" value="1" size="20" maxlength="20">
+        </td>
+      </tr>
+      <tr>
+        <td width="35%" align="right">User Number:</td>
+        <td width="65%">
+	  <input type="text" name="usernumber" value="" size="20" maxlength="20">
+        </td>
+      </tr>
+      <tr>
+        <td width="35%" align="right">Username:</td>
+        <td width="65%">
+	  <input type="text" name="username" value="" size="20" maxlength="20">
+        </td>
+      </tr>
+      <tr>
+        <td width="35%" align="right">ICPC ID:</td>
+        <td width="65%">
+	  <input type="text" name="usericpcid" value="" size="20" maxlength="50">
+        </td>
+      </tr>
+      <tr>
+        <td width="35%" align="right">Type:</td>
+        <td width="65%">
+		<select name="usertype">
+		<option selected="" value="team">Team</option>
+		<option value="judge">Judge</option>
+		<option value="admin">Admin</option>
+		<option value="staff">Staff</option>
+		<option value="score">Score</option>
+		        <option value="site">Site</option>
+        		</select>
+        </td>
+      </tr>
+      <tr>
+        <td width="35%" align="right">Enabled:</td>
+        <td width="65%">
+		<select name="userenabled">
+		<option selected="" value="t">Yes</option>
+		<option value="f">No</option>
+		</select>
+        </td>
+      </tr>
+      <tr>
+        <td width="35%" align="right">MultiLogins (local teams should be set to <b>No</b>):</td>
+        <td width="65%">
+		<select name="usermultilogin">
+		<option value="t">Yes</option>
+		<option selected="" value="f">No</option>
+		</select>
+        </td>
+      </tr>
+      <tr>
+        <td width="35%" align="right">User Full Name:</td>
+        <td width="65%">
+	  <input type="text" name="userfullname" value="" size="50" maxlength="200">
+        </td>
+      </tr>
+      <tr>
+        <td width="35%" align="right">User Description:</td>
+        <td width="65%">
+	  <input type="text" name="userdesc" value="" size="50" maxlength="300">
+        </td>
+      </tr>
+      <tr>
+        <td width="35%" align="right">User IP:</td>
+        <td width="65%">
+	  <input type="text" name="userip" value="" size="20" maxlength="20">
+        </td>
+      </tr>
+      <tr>
+        <td width="35%" align="right">Password:</td>
+        <td width="65%">
+	  <input type="password" name="passwordn1" value="" size="20" maxlength="200">
+        </td>
+      </tr>
+      <tr>
+        <td width="35%" align="right">Retype Password:</td>
+        <td width="65%">
+	  <input type="password" name="passwordn2" value="" size="20" maxlength="200">
+        </td>
+      </tr>
+      <tr>
+        <td width="35%" align="right">Allow password change:</td>
+        <td width="65%">
+		<select name="changepass">
+		<option value="t">Yes</option>
+		<option selected="" value="f">No</option>
+		</select>
+        </td>
+      </tr>
+      <tr>
+        <td width="35%" align="right">Admin (this user) Password:</td>
+        <td width="65%">
+	  <input type="password" name="passwordo" value="" size="20" maxlength="200">
+        </td>
+      </tr>
+    </tbody></table>
+  </center>
+  <center>
+      <input type="submit" name="Submit" value="Send" onclick="conf3()">
+      <input type="submit" name="Cancel" value="Cancel" onclick="conf5()">
+  </center>
+
+
+
+
+</body></html>
+<!-- Se recomendia adicionar al final el script que modifica la ui para que los componentes ya estén cargados -->
+<script src="ui/ui2018html.js"></script>
+<script src="ui/jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+<script src="ui/jquery-ui-1.12.1/jquery-ui.js"></script>
+<script src="ui/uijquery2018.js"></script>
+
+		<script src="ui/colorpicker/jquery.colorpicker.js"></script>
+		<link href="ui/colorpicker/jquery.colorpicker.css" rel="stylesheet" type="text/css"/>
+		<script src="ui/colorpicker/i18n/jquery.ui.colorpicker-nl.js"></script>
+		<script src="ui/colorpicker/swatches/jquery.ui.colorpicker-pantone.js"></script>
+		<script src="ui/colorpicker/parts/jquery.ui.colorpicker-rgbslider.js"></script>
+		<script src="ui/colorpicker/parts/jquery.ui.colorpicker-memory.js"></script>
+		<script src="ui/colorpicker/parsers/jquery.ui.colorpicker-cmyk-parser.js"></script>
+		<script src="ui/colorpicker/parsers/jquery.ui.colorpicker-cmyk-percentage-parser.js"></script>

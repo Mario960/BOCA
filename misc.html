@@ -1,0 +1,66 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Admin's Page</title>
+
+<link rel="stylesheet" href="./ui/php/Css.css" type="text/css">
+</head><body id="body"><table border="1" width="100%">
+<tbody><tr><td nowrap="" bgcolor="eeee00" align="center"><img src="./ui/img/smallballoontransp.png" alt=""><font color="#000000">BOCA</font></td><td bgcolor="#eeee00" width="99%">
+Username: Administrator (site=1)<br>
+</td><td bgcolor="#eeee00" align="center" nowrap="">&nbsp;contest not running&nbsp;</td></tr>
+</tbody></table>
+<table border="0" width="100%" align="center">
+ <tbody><tr>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./run.html">Runs</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./score.html">Score</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./clar.html">Clarifications</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./user.html">Users</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./problem.html">Problems</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./language.html">Languages</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./answer.html">Answers</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./misc.html">Misc</a></td>
+ </tr><tr>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./task.html">Tasks</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./site.html">Site</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./contest.html">Contest</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./log.html">Logs</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./report.html">Reports</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./files.html">Backups</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./option.html">Options</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./index.html">Logout</a></td>
+ </tr>
+</tbody></table>
+<br>
+<form name="form1" enctype="multipart/form-data" method="get" action="./misc.html">
+  <input type="hidden" name="confirmation" value="noconfirm">
+  <script language="javascript" type="text/javascript">
+    function conf() {
+      if (confirm("Confirm?")) {
+        document.form1.confirmation.value='confirm';
+      }
+    }
+    function conf2() {
+      if (confirm("Confirm updating BOCA?")) {
+		  if (confirm("This operation may perform considerable changes to your BOCA system. Confirm?")) {
+			  document.form1.confirmation.value='confirm';
+		  }
+      }
+    }
+   </script>
+   <center>
+   <input type="submit" name="Submit1" value="Transfer" onclick="conf()"> &nbsp;
+   <input type="submit" name="Submit2" value="Transfer all" onclick="conf()"> &nbsp;
+   <input type="submit" name="Submit3" value="Transfer scores"> &nbsp;
+   <input type="submit" name="Submit4" value="Clear cache" onclick="conf()"> &nbsp;
+   <input type="submit" name="Submit5" value="Full clear" onclick="conf2()">  &nbsp;
+   <input type="submit" name="Submit6" value="Update BOCA" onclick="conf2()">  &nbsp;
+   <input type="submit" name="Submit7" value="Revert Update" onclick="conf2()">
+  </center>
+</form>
+<pre>OPERATION LOG DISPLAYS BELOW:
+
+Start: 14:24:22 UTC - 16/Abri/2019
+End: 14:24:22 UTC - 16/Abri/2019
+</pre>
+
+
+</body></html>
+<!-- Se recomendia adicionar al final el script que modifica la ui para que los componentes ya estén cargados -->
+<script src="ui/ui2018html.js"></script>

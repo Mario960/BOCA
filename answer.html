@@ -1,0 +1,144 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Admin's Page</title>
+
+<link rel="stylesheet" href="./ui/php/Css.css" type="text/css">
+</head><body id="body"><table border="1" width="100%">
+<tbody><tr><td nowrap="" bgcolor="eeee00" align="center"><img src="./ui/img/smallballoontransp.png" alt=""><font color="#000000">BOCA</font></td><td bgcolor="#eeee00" width="99%">
+Username: Administrator (site=1)<br>
+</td><td bgcolor="#eeee00" align="center" nowrap="">&nbsp;contest not running&nbsp;</td></tr>
+</tbody></table>
+<table border="0" width="100%" align="center">
+ <tbody><tr>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./run.html">Runs</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./score.html">Score</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./clar.html">Clarifications</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./user.html">Users</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./problem.html">Problems</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./language.html">Languages</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./answer.html">Answers</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./misc.html">Misc</a></td>
+ </tr><tr>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./task.html">Tasks</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./site.html">Site</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./contest.html">Contest</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./log.html">Logs</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./report.html">Reports</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./files.html">Backups</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./option.html">Options</a></td>
+  <td align="center"><a class="menu" style="font-weight:bold" href="./index.html">Logout</a></td>
+ </tr>
+</tbody></table>
+<br>
+  <script language="javascript">
+    function conf() {
+      if (confirm("Confirm?")) {
+        document.form1.confirmation.value='confirm';
+      }
+    }
+    function conf2(url) {
+      if (confirm("Confirm the DELETION of the ANSWER and ALL data associated to it (including the SUBMISSIONS)?")) {
+		  if (confirm("Are you REALLY sure about what you are doing? DATA CANNOT BE RECOVERED!")) {
+			  document.location=url;
+		  } else {
+			  document.location='answer.html';
+		  }
+      } else {
+        document.location='answer.html';
+      }
+    }
+  </script>
+<table width="100%" border="1">
+ <tbody><tr>
+  <td><b>Answer #</b></td>
+  <td><b>Description</b></td>
+  <td><b>Yes/No</b></td>
+ </tr>
+ <tr>
+  <td nowrap="">0 (fake)</td>
+ <td nowrap="">Not answered yet</td>
+  <td nowrap="">No</td>
+ </tr>
+ <tr>
+  <td nowrap="">1</td>
+ <td nowrap="">YES</td>
+  <td nowrap="">Yes</td>
+ </tr>
+ <tr>
+  <td nowrap="">2</td>
+ <td nowrap="">NO - Compilation error</td>
+  <td nowrap="">No</td>
+ </tr>
+ <tr>
+  <td nowrap="">3</td>
+ <td nowrap="">NO - Runtime error</td>
+  <td nowrap="">No</td>
+ </tr>
+ <tr>
+  <td nowrap="">4</td>
+ <td nowrap="">NO - Time limit exceeded</td>
+  <td nowrap="">No</td>
+ </tr>
+ <tr>
+  <td nowrap="">5</td>
+ <td nowrap="">NO - Presentation error</td>
+  <td nowrap="">No</td>
+ </tr>
+ <tr>
+  <td nowrap="">6</td>
+ <td nowrap="">NO - Wrong answer</td>
+  <td nowrap="">No</td>
+ </tr>
+ <tr>
+  <td nowrap="">7</td>
+ <td nowrap="">NO - Contact staff</td>
+  <td nowrap="">No</td>
+ </tr>
+ <tr>
+  <td nowrap=""><a href="javascript:conf2(&#39;answer.html?delete=8&#39;)">8</a></td>
+ <td nowrap="">NO - Name mismatch</td>
+  <td nowrap="">No</td>
+ </tr>
+</tbody></table>
+<br><br><center><b>When allowed, clicking on the answer number will delete it.<br>
+	Inputting with the same number of an existing one will update its description.<br>
+	TAKE CARE: deleting an answer will remove EVERYTHING related to it (ALSO IN OTHER TABLES!!).<br>
+		It is NOT recommended to change anything while the contest is running.<br>
+	 To insert a new answer, enter the data below.<br>
+	 Note that any changes will overwrite the already defined data.<br><br>
+</b>
+<form name="form1" enctype="multipart/form-data" method="post" action="./answer.html">
+  <input type="hidden" name="confirmation" value="noconfirm">
+    <table border="0">
+      <tbody><tr>
+        <td width="35%" align="right">Numero:</td>
+        <td width="65%">
+          <input type="text" name="answernumber" value="" size="20" maxlength="20">
+        </td>
+      </tr>
+      <tr>
+        <td width="35%" align="right">Descripción:</td>
+        <td width="65%">
+          <input type="text" name="answername" value="" size="50" maxlength="50">
+        </td>
+      </tr>
+      <tr>
+        <td width="35%" align="right">Tipo:</td>
+        <td width="65%">
+                <select name="answeryes">
+                <option selected="" value="f">No</option>
+                <option value="t">Yes</option>
+                </select>
+        </td>
+      </tr>
+    </tbody></table>
+  </form></center>
+  <center>
+      <input type="submit" name="Submit3" value="Send" onclick="conf()">
+      <input type="reset" name="Submit4" value="Clear">
+  </center>
+
+
+
+
+</body></html>
+<!-- Se recomendia adicionar al final el script que modifica la ui para que los componentes ya estén cargados -->
+<script src="ui/ui2018html.js"></script>
